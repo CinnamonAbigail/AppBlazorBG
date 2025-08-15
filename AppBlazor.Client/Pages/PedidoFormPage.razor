@@ -1,0 +1,61 @@
+﻿@page "/formPedido"
+<h3>PedidoFormPage</h3>
+
+<EditForm Model="@oPedidoFormCLS" OnValidSubmit="@guardar"> 
+<DataAnnotationsValidator />
+
+    <div class="mt-3">
+        <label>Numero de empleado</label>
+        <InputNumber class="form-control" @bind-Value="oPedidoFormCLS.num_empl" />
+        <ValidationMessage For="(() => oPedidoFormCLS.num_empl)" />
+    </div>
+
+    <div class="mt-3">
+    <label>Nombre</label>
+        <InputText class="form-control" @bind-Value="oPedidoFormCLS.nombre" />
+        <ValidationMessage For="(() => oPedidoFormCLS.nombre)" />
+    </div>
+
+    <div class="mt-3">
+    <label>Edad</label>
+        <InputNumber class="form-control" @bind-Value="oPedidoFormCLS.edad" />
+        <ValidationMessage For="(() => oPedidoFormCLS.edad)" />
+    </div>
+
+    <div class="mt-3">
+        <label>Cargo</label>
+        <InputText class="form-control" @bind-Value="oPedidoFormCLS.cargo" />
+        <ValidationMessage For="(() => oPedidoFormCLS.cargo)" />
+    </div>
+
+    <div class="mt-3">
+        <label>Fecha de contrato</label>
+        <InputDate class="form-control" @bind-Value="oPedidoFormCLS.fecha_contrato" />
+        <ValidationMessage For="(() => oPedidoFormCLS.fecha_contrato)" />
+    </div>
+
+    <div class="mt-3">
+        <label>Cuota</label>
+        <InputNumber class="form-control" @bind-Value="oPedidoFormCLS.cuota" />
+        <ValidationMessage For="(() => oPedidoFormCLS.cuota)" />
+    </div>
+
+    <div class="mt-3">
+        <label>Ventas</label>
+        <InputNumber class="form-control" @bind-Value="oPedidoFormCLS.venta" />
+        <ValidationMessage For="(() => oPedidoFormCLS.venta)" />
+    </div>
+
+    <div class="mt-3">
+        <button type="submit" class="btn btn-success">Guardar</button>
+    </div>
+</EditForm>
+
+@code {
+    public PedidoFormCLS oPedidoFormCLS { get; set; } = new PedidoFormCLS();
+
+    private void guardar()
+    {
+        Console.WriteLine("Guardando...");
+    }
+}
